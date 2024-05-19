@@ -71,7 +71,7 @@ namespace BasTestApi
             {
                 RequestTime = receivedTime.ToString("yyyy-MM-ddTHH:mm:ss"),
                 WriteTime = processedTime.ToString("yyyy-MM-ddTHH:mm:ss"),
-                ProcessingTime = (processedTime - receivedTime).TotalMicroseconds.ToString(),
+                ProcessingTime = (processedTime - receivedTime).TotalMilliseconds.ToString(),
             };
         }
     }
