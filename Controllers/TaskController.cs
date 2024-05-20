@@ -18,7 +18,7 @@ public class TaskController : ControllerBase
     {
         if (string.IsNullOrWhiteSpace(request.Message) || request.Message.Length > 100)
         {
-            return BadRequest("Data field is required and should be less than or equal to 100 characters.");
+            return BadRequest("Message field is required and should be less than or equal to 100 characters.");
         }
 
         var response = await _taskQueueService.EnqueueTaskAsync(request);
