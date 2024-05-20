@@ -27,11 +27,10 @@ namespace BasTestApi
         }
 
         private async Task ProcessQueueAsync()
-        {
-            List<(TaskRequest, DateTime, TaskCompletionSource<TaskResponse>)> batch;
+        {            
             while (true)
             {
-                (TaskRequest request, DateTime receivedTime, TaskCompletionSource<TaskResponse> tcs) item;
+                List<(TaskRequest, DateTime, TaskCompletionSource<TaskResponse>)> batch;
 
                 lock (_lock)
                 {
